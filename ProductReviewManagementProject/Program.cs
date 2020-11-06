@@ -37,7 +37,7 @@ namespace ProductReviewManagementProject
                 new ProductReview(){ProducID=25,UserID=1,Rating=3,Review="nice",isLike=true}
             };
             Management management = new Management();
-            management.RetrieveProductIdAndReview(productReviewList);
+            management.skipFiveRecords(productReviewList);
         }
     }
 }
