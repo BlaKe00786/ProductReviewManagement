@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace ProductReviewManagementProject
 {
@@ -37,7 +38,11 @@ namespace ProductReviewManagementProject
                 new ProductReview(){ProducID=25,UserID=1,Rating=3,Review="nice",isLike=true}
             };
             Management management = new Management();
-            management.RetrieveProductIdAndReview(productReviewList);
+            DataTable dataTable = management.CreateDataTable();
+            foreach (var product in productReviewList)
+            {
+                dataTable.Rows.Add(product.ProducID, product.UserID, product.Rating, product.Review, product.isLike);
+            }
         }
     }
 }

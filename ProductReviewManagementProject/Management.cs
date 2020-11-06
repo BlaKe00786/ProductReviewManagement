@@ -62,5 +62,14 @@ namespace ProductReviewManagementProject
                     + " " + "Rating:- " + list.Rating + " " + "Review:- " + list.Review + " " + "isLike:- " + list.isLike);
             }
         }
+        public DataTable CreateDataTable()
+        {
+            dataTable.Columns.Add("ProductID");
+            dataTable.Columns.Add("UserID");
+            dataTable.Columns.Add("Rating");
+            dataTable.Columns.Add("Review");
+            dataTable.Columns.Add("isLike");
+            return dataTable;
+        }
     }
 }
