@@ -41,8 +41,9 @@ namespace ProductReviewManagementProject
             DataTable dataTable = management.CreateDataTable();
             foreach (var product in productReviewList)
             {
-                dataTable.Rows.Add(product.ProducID, product.UserID, product.Rating, product.Review, product.isLike);
+                dataTable.Rows.Add(product.ProducID, product.UserID, product.Rating, product.Review,(bool)product.isLike);
             }
+            management.RetrieveRecordsWithisLikeTrue(dataTable);
         }
     }
 }
