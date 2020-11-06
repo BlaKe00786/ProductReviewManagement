@@ -36,6 +36,8 @@ namespace ProductReviewManagementProject
                 new ProductReview(){ProducID=22,UserID=1,Rating=8,Review="nice",isLike=true},
                 new ProductReview(){ProducID=25,UserID=1,Rating=3,Review="nice",isLike=true}
             };
+            Management management = new Management();
+            management.TopRecords(productReviewList);
         }
     }
 }
