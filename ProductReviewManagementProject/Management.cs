@@ -36,7 +36,7 @@ namespace ProductReviewManagementProject
         public void RetrieveCountOfRecords(List<ProductReview> listProductReview)
         {
             var recordedData = listProductReview.GroupBy(x => x.ProducID).Select(x => new { ProductID = x.Key, Count = x.Count() });
-            Console.WriteLine("ID with Count");
+            Console.WriteLine("ID and Count");
             foreach (var list in recordedData)
             {
                 Console.WriteLine(list.ProductID + "--------" + list.Count);
@@ -45,7 +45,7 @@ namespace ProductReviewManagementProject
         public void RetrieveProductIdAndReview(List<ProductReview> listProductReview)
         {
             var recordedData = listProductReview.Select(x => new { ProductID = x.ProducID, Review = x.Review });
-            Console.WriteLine("ID with Review");
+            Console.WriteLine("ID and Review");
             foreach (var list in recordedData)
             {
                 Console.WriteLine(list.ProductID + "--------" + list.Review);
@@ -55,7 +55,7 @@ namespace ProductReviewManagementProject
         {
             var recordedData = (from productReviews in listProductReview
                                 select productReviews).Skip(5);
-            Console.WriteLine("Top Records skiping top 5 rated records- ");
+            Console.WriteLine("Top Records skiping top 5 records- ");
             foreach (var list in recordedData)
             {
                 Console.WriteLine("ProductID:- " + list.ProducID + " " + "UserID:- " + list.UserID
@@ -81,6 +81,15 @@ namespace ProductReviewManagementProject
             {
                 Console.WriteLine("ProductID:- " + list.Field<int>("ProductID") + " " + "UserID:- " + list.Field<int>("UserID")
                     + " " + "Rating:- " + list.Field<double>("Rating") + " " + "Review:- " + list.Field<string>("Review") + " " + "isLike:- " + list.Field<bool>("isLike"));
+            }
+        }
+        public void FingAveragerating(List<ProductReview> listProductReview)
+        {
+            Console.WriteLine("Avg Rating per Productid-");
+            var recordedData = listProductReview.GroupBy(x => x.ProducID).Select(x => new { Pid = x.Key, Pavg = x.Average(y => y.Rating) });
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine(list.Pid + "-----" + list.Pavg);
             }
         }
     }
