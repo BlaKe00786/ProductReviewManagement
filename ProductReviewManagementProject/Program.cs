@@ -43,7 +43,7 @@ namespace ProductReviewManagementProject
             {
                 dataTable.Rows.Add(product.ProducID, product.UserID, product.Rating, product.Review,(bool)product.isLike);
             }
-            management.FingAveragerating(productReviewList);
+            management.getNiceReview(productReviewList);
         }
     }
 }

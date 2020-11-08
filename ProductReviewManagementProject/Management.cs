@@ -92,5 +92,17 @@ namespace ProductReviewManagementProject
                 Console.WriteLine(list.Pid + "-----" + list.Pavg);
             }
         }
+        public void getNiceReview(List<ProductReview> listProductReview)
+        {
+            Console.WriteLine("Records with nice review-");
+            var recordedData = from productReviews in listProductReview
+                               where (productReviews.Review.Equals("nice"))
+                               select productReviews;
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine("ProductID:- " + list.ProducID + " " + "UserID:- " + list.UserID
+                    + " " + "Rating:- " + list.Rating + " " + "Review:- " + list.Review + " " + "isLike:- " + list.isLike);
+            }
+        }
     }
 }
