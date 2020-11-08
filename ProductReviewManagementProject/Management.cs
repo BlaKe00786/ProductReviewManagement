@@ -104,5 +104,18 @@ namespace ProductReviewManagementProject
                     + " " + "Rating:- " + list.Rating + " " + "Review:- " + list.Review + " " + "isLike:- " + list.isLike);
             }
         }
+        public void getUserId10Records(List<ProductReview> listProductReview)
+        {
+            Console.WriteLine("Records with user id 10 sorted by user rating in descending order------>");
+            var recordedData = from productReviews in listProductReview
+                               where (productReviews.UserID == 10)
+                               orderby productReviews.Rating descending
+                               select productReviews;
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine("ProductID:- " + list.ProducID + " " + "UserID:- " + list.UserID
+                    + " " + "Rating:- " + list.Rating + " " + "Review:- " + list.Review + " " + "isLike:- " + list.isLike);
+            }
+        }
     }
 }

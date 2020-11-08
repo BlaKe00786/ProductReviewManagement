@@ -24,11 +24,11 @@ namespace ProductReviewManagementProject
                 new ProductReview(){ProducID=12,UserID=1,Rating=2,Review="Good",isLike=true},
                 new ProductReview(){ProducID=12,UserID=1,Rating=4,Review="Good",isLike=true},
                 new ProductReview(){ProducID=13,UserID=1,Rating=5,Review="Good",isLike=true},
-                new ProductReview(){ProducID=14,UserID=1,Rating=6,Review="Good",isLike=false},
+                new ProductReview(){ProducID=14,UserID=10,Rating=6,Review="Good",isLike=false},
                 new ProductReview(){ProducID=15,UserID=1,Rating=2,Review="nice",isLike=true},
                 new ProductReview(){ProducID=15,UserID=1,Rating=1,Review="bad",isLike=true},
                 new ProductReview(){ProducID=15,UserID=1,Rating=2,Review="bad",isLike=true},
-                new ProductReview(){ProducID=15,UserID=1,Rating=1,Review="Good",isLike=false},
+                new ProductReview(){ProducID=15,UserID=10,Rating=1,Review="Good",isLike=false},
                 new ProductReview(){ProducID=18,UserID=1,Rating=9,Review="nice",isLike=true},
                 new ProductReview(){ProducID=19,UserID=1,Rating=10,Review="nice",isLike=true},
                 new ProductReview(){ProducID=20,UserID=1,Rating=8,Review="nice",isLike=true},
@@ -43,7 +43,7 @@ namespace ProductReviewManagementProject
             {
                 dataTable.Rows.Add(product.ProducID, product.UserID, product.Rating, product.Review,(bool)product.isLike);
             }
-            management.getNiceReview(productReviewList);
+            management.getUserId10Records(productReviewList);
         }
     }
 }
